@@ -9,7 +9,7 @@ function exchange_calc(currency) {
     .then(function (response) {
       //console.log("Response for success " + response.result + "Currency" + currency);
 
-      if (response) {
+      if (response.result === "success") {
         printElements(response, currency);
       } else {
         printError(response, currency);
