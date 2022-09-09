@@ -17,7 +17,20 @@ function exchange_calc(from, to, amount) {
 }
 
 function printElements(response, from, to, amount) {
-  console.log("Response for success " + response["conversion_result"] + "From " + from + "To " + to + "Amount " + amount);
+  //Date
+  document.getElementById("date").innerHTML = response["time_last_update_utc"];
+  // From (x2)
+  document.querySelector("span[name='from1']").innerHTML = from;
+  document.querySelector("span[name='from2']").innerHTML = from;
+  // To (x2)
+  document.querySelector("span[name='to1']").innerHTML = to;
+  document.querySelector("span[name='to2']").innerHTML = to;
+  // Rate
+  document.getElementById("rate").innerHTML = response["conversion_rate"];
+  // Amount
+  document.getElementById("amount").innerHTML = amount;
+  // Conversion result
+  document.getElementById("conv-Result").innerHTML = response["conversion_result"];
 
 }
 

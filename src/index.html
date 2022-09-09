@@ -27,6 +27,7 @@ provider:
     <select class="form-select" id="from">
       <option selected>Open this select menu</option>
       <option value="USD">USD	(United States Dollar)</option>
+      <option value="ARS">ARS	(Argentine Peso)</option>
       <option value="CAD">CAD	(Canadian Dollar)</option>
       <option value="CHF">CHF	(Swiss Franc)</option>
       <option value="EUR">EUR	(Euro)</option>
@@ -40,6 +41,7 @@ provider:
     <select class="form-select" id="to">
       <option selected>Open this select menu</option>
       <option value="USD">USD	(United States Dollar)</option>
+      <option value="ARS">ARS	(Argentine Peso)</option>
       <option value="CAD">CAD	(Canadian Dollar)</option>
       <option value="CHF">CHF	(Swiss Franc)</option>
       <option value="EUR">EUR	(Euro)</option>
@@ -51,7 +53,14 @@ provider:
   <button type="submit" class="btn btn-primary">Submit!</button>
   </div>
   </form>
-  <div id="response" class="hidden"></div>
+  <div id="response" class="hidden col-12 results">
+    <h3>Here's your exchange:</h3>
+    <ul>
+      <li>As of <span id="date"></span>,</li>
+      <li>the conversion rate from <span name="from1"></span> to <span name="to1"></span> is  1 to <span id="rate"></span>.</li>
+      <li><span id="amount"></span> <span name="from2"></span> are <span id="conv-Result"></span> <span name="to2"></span>.</li>
+    </ul>
+  </div>
 </div>
 </body>
 
