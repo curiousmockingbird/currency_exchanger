@@ -4,17 +4,20 @@ import './css/styles.css';
 import Exchange_calcService from './js/exchange_calc.js';
 
 
-function exchange_calc() {
-  let promise = Exchange_calcService();
-  promise.then(function(calcDataArray) {
-    printElements(calcDataArray);
-  }, function(errorArray) {
-    printError(errorArray);
+function exchange_calc(currency) {
+  Exchange_calcService.getAPIresponse(currency)
+  .then(function(response) {
+    console.log("Response " + response.result + "Currency" + currency);
+    if (response) {
+    printElements(response, currency);
+    } else {
+      printError(response, currency);
+    }
   });
 }
 
-function printElements(){
-
+function printElements(response, currency){
+  console.log(response.result);
 }
 
 function printError() {
@@ -23,7 +26,9 @@ function printError() {
 
 function handleTriangleForm(event) {
   event.preventDefault();
-  exchange_calc();
+  console.log("Hey");
+  const currency = document.getElementById("currency-Input").value;
+  exchange_calc(currency);
   
 }
 
