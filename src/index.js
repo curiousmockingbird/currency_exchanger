@@ -53,8 +53,10 @@ function handleTriangleForm(event) {
   document.getElementById("response").removeAttribute("class", "hidden");
 
   if (from === "ABC" || to === "XYZ") {
-    document.getElementById("error").removeAttribute("class");
+    document.getElementById("error").removeAttribute("class", "hidden");
+    document.getElementById("responseContent").setAttribute("class", "hidden");
   } else {
+    document.getElementById("error").setAttribute("class", "hidden");
     document.getElementById("responseContent").removeAttribute("class");
   }
   // Reset form
