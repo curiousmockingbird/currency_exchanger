@@ -35,7 +35,8 @@ function printElements(response, from, to, amount) {
 }
 
 function printError(error, from, to, amount) {
-  console.log("Response for error " + error + + "From " + from + "To " + to + "Amount " + amount);
+  //Error
+  document.getElementById("error").innerHTML = ` You tried to convert ${amount} ${from} to ${to}. ${error}`;
 
 }
 
@@ -48,7 +49,16 @@ function handleTriangleForm(event) {
   const to = document.getElementById("to").value;
 
   exchange_calc(from, to, amount);
+  // Unhide results
+  document.getElementById("response").removeAttribute("class", "hidden");
 
+  if (from === "ABC" || to === "XYZ") {
+    document.getElementById("error").removeAttribute("class");
+  } else {
+    document.getElementById("responseContent").removeAttribute("class");
+  }
+  // Reset form
+  document.querySelector("#exchCalc-form").reset();
 }
 
 window.addEventListener("load", function () {

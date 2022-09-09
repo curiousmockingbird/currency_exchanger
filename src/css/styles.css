@@ -35,3 +35,7 @@ ul {
 .results {
   margin-top: 10%;
 }
+
+.hidden {
+  display: none;
+}
