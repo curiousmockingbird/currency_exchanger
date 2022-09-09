@@ -6,32 +6,35 @@ import Exchange_calcService from './js/exchange_calc.js';
 
 function exchange_calc(currency) {
   Exchange_calcService.getAPIresponse(currency)
-  .then(function(response) {
-    console.log("Response " + response.result + "Currency" + currency);
-    if (response) {
-    printElements(response, currency);
-    } else {
-      printError(response, currency);
-    }
-  });
+    .then(function (response) {
+      //console.log("Response for success " + response.result + "Currency" + currency);
+
+      if (response) {
+        printElements(response, currency);
+      } else {
+        printError(response, currency);
+      }
+    });
 }
 
-function printElements(response, currency){
-  console.log(response.result);
+function printElements(response, currency) {
+  console.log("Response for success " + response.result + "Currency" + currency);
+
 }
 
-function printError() {
+function printError(error, currency) {
+  console.log("Response for error " + error + "Currency" + currency);
 
 }
 
 function handleTriangleForm(event) {
   event.preventDefault();
-  console.log("Hey");
+  console.log.apply("Hey");
   const currency = document.getElementById("currency-Input").value;
   exchange_calc(currency);
-  
+
 }
 
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
   document.querySelector("#exchCalc-form").addEventListener("submit", handleTriangleForm);
 });
