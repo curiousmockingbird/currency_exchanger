@@ -1,15 +1,45 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@1,700&display=swap" rel="stylesheet">
   <title>Exchange Calculator</title>
 </head>
+
 <body>
-  <h3>Test</h3>
+  <div class="container">
+  <h3>Your CURRENCY EXCHANGE provider:</h3>
   <form id="exchCalc-form">
-    <label for="currency-Input">Input a currency:</label>
-    <input id="currency-Input" type="text">
+    <div class="col-6 amount">
+    <label for="amount-Input">Enter an amount:</label><br>
+    <input id="amount-Input" type="text" placeholder="Amount"><br>
+  </div>
+  <div class="row">
+    <div class="col-6">
+    <label for="from">Exchange from:</label>
+    <select class="form-select" id="from">
+      <option selected>Open this select menu</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+  </div>
+  <div class="col-6">
+    <label for="to">To:</label>
+    <select class="form-select" id="to">
+      <option selected>Open this select menu</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+  </div>
+  </div>
     <button type="submit">Submit!</button>
   </form>
   <div id="response"></div>
+</div>
 </body>
+
 </html>

@@ -7,7 +7,6 @@ import Exchange_calcService from './js/exchange_calc.js';
 function exchange_calc(currency) {
   Exchange_calcService.getAPIresponse(currency)
     .then(function (response) {
-      //console.log("Response for success " + response.result + "Currency" + currency);
 
       if (response.result === "success") {
         printElements(response, currency);
