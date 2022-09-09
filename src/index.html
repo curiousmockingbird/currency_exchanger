@@ -10,35 +10,48 @@
 
 <body>
   <div class="container">
-  <h3>Your CURRENCY EXCHANGE provider:</h3>
+  <h3><pre>    
+Your 
+CURRENCY EXCHANGE 
+provider:
+  </pre></h3>
+
   <form id="exchCalc-form">
-    <div class="col-6 amount">
+    <div class="col-12 amount">
     <label for="amount-Input">Enter an amount:</label><br>
     <input id="amount-Input" type="text" placeholder="Amount"><br>
   </div>
   <div class="row">
-    <div class="col-6">
-    <label for="from">Exchange from:</label>
+    <div class="col-6 left">
+    <label for="from">Exchange from:</label><br>
     <select class="form-select" id="from">
       <option selected>Open this select menu</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
+      <option value="USD">USD	(United States Dollar)</option>
+      <option value="CAD">CAD	(Canadian Dollar)</option>
+      <option value="CHF">CHF	(Swiss Franc)</option>
+      <option value="EUR">EUR	(Euro)</option>
+      <option value="JPY">JPY	(Japanese Yen)</option>
+      <option value="MXN">MXN	(Mexican Peso)</option>
+      <option value="RUB">RUB	(Russian Ruble)</option>
     </select>
   </div>
-  <div class="col-6">
-    <label for="to">To:</label>
+  <div class="col-6 right">
+    <label for="to">To:</label><br>
     <select class="form-select" id="to">
       <option selected>Open this select menu</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
+      <option value="USD">USD	(United States Dollar)</option>
+      <option value="CAD">CAD	(Canadian Dollar)</option>
+      <option value="CHF">CHF	(Swiss Franc)</option>
+      <option value="EUR">EUR	(Euro)</option>
+      <option value="JPY">JPY	(Japanese Yen)</option>
+      <option value="MXN">MXN	(Mexican Peso)</option>
+      <option value="RUB">RUB	(Russian Ruble)</option>
     </select>
   </div>
+  <button type="submit" class="btn btn-primary">Submit!</button>
   </div>
-    <button type="submit">Submit!</button>
   </form>
-  <div id="response"></div>
+  <div id="response" class="hidden"></div>
 </div>
 </body>
 
