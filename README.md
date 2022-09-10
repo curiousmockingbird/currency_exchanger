@@ -18,20 +18,20 @@ This is a currency exchange calculator that works with the ExchangeRate API to a
 
 ## Setup/Installation Requirements
 
-* _Steps to use the Exchange Calculator using the user's terminal:_     
+Steps to use the Exchange Calculator using the user's terminal:     
 * _Clone this repository to your desktop._
-* _Access to the top level of the repository._
+* _Access the top level of the repository._
 * _run $ code ._
 
-* _Once the repository is open in VS Code:_
+Once the repository is open in VS Code:
 * _run $ npm install_
 * _If the user doesn't have an API key at the ExchangeRate-API web site, please sign up and generate a Free Key [here](https://app.exchangerate-api.com/sign-up)_
 
-* _With a Free Key:_
+With a Free Key:
 * _run $ touch .env (at the top level of the repository)_
 
-* _Open .env file in VS Code and add:_
-* _API_KEY = 'YOUR-KEY-HERE':_
+Open .env file in VS Code and add:
+API_KEY = 'YOUR-KEY-HERE' (do not include '', only your API Key)
 * _Save .env file_
 
 
