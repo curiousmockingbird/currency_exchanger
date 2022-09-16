@@ -1,11 +1,11 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import Exchange_calcService from './js/exchange_calc.js';
+import Exchange_CalcService from './js/exchange_calc.js';
 
 
-function exchange_calc(from, to, amount) {
-  Exchange_calcService.getAPIresponse(from, to, amount)
+function exchange_Calc(from, to, amount) {
+  Exchange_CalcService.getAPIresponse(from, to, amount)
     .then(function (response) {
 
       if (response.result === "success") {
@@ -32,37 +32,36 @@ function printElements(response, from, to, amount) {
   // Conversion result
   document.getElementById("conv-Result").innerHTML = response["conversion_result"];
 
+  // Unhide response div
+  document.getElementById("response").removeAttribute("class", "hidden");
+  // Keep error message span hidden
+  document.getElementById("error").setAttribute("class", "hidden");
+  // Unhide conversion results
+  document.getElementById("responseContent").removeAttribute("class");
 }
 
 function printError(error, from, to, amount) {
-  //Error
   document.getElementById("error").innerHTML = ` You tried to convert ${amount} ${from} to ${to}. ${error}`;
 
+  if (from === "ABC" || to === "XYZ") {
+    document.getElementById("error").removeAttribute("class", "hidden");
+    document.getElementById("responseContent").setAttribute("class", "hidden");
+  }
 }
 
-function handleTriangleForm(event) {
+function handleFormSubmission(event) {
   event.preventDefault();
-  console.log.apply("Hey");
 
   const amount = parseInt(document.getElementById("amount-Input").value);  
   const from = document.getElementById("from").value;
   const to = document.getElementById("to").value;
 
-  exchange_calc(from, to, amount);
-  // Unhide results
-  document.getElementById("response").removeAttribute("class", "hidden");
+  exchange_Calc(from, to, amount);
 
-  if (from === "ABC" || to === "XYZ") {
-    document.getElementById("error").removeAttribute("class", "hidden");
-    document.getElementById("responseContent").setAttribute("class", "hidden");
-  } else {
-    document.getElementById("error").setAttribute("class", "hidden");
-    document.getElementById("responseContent").removeAttribute("class");
-  }
   // Reset form
   document.querySelector("#exchCalc-form").reset();
 }
 
 window.addEventListener("load", function () {
-  document.querySelector("#exchCalc-form").addEventListener("submit", handleTriangleForm);
+  document.querySelector("#exchCalc-form").addEventListener("submit", handleFormSubmission);
 });

@@ -1,4 +1,4 @@
-export default class Exchange_calcService {
+export default class Exchange_CalcService {
   static getAPIresponse(from, to, amount) {
     return fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/pair/${from}/${to}/${amount}`)
       .then(function(response) {
